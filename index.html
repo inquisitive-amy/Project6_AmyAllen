@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Movie App</title>
+	<!--[if lt IE 9]>
+	  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+	<link rel="stylesheet" href="style.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+</head>
+<body>
+<div class="banner" id="top">
+	<h1>Genre Picker</h1>
+	<form action="">
+		<select name="genre">
+			<option class="picker">Select</option>
+		</select>
+	</form>
+</div>
+
+<div class="wrapper">
+
+	<h2></h2>	
+	<fieldset class="rateMovie">
+	    <legend>Rate This Movie:</legend>
+
+	    <input type="radio" id="star5" name="rating" value="5">
+	    <label for="star5">5 stars</label>
+	    
+	    <input type="radio" id="star4" name="rating" value="4">
+	    <label for="star4">4 stars</label>
+	    
+	    <input type="radio" id="star3" name="rating" value="3">
+	    <label for="star3">3 stars</label>
+	    
+	    <input type="radio" id="star2" name="rating" value="2">
+	    <label for="star2">2 stars</label>
+	    
+	    <input type="radio" id="star1" name="rating" value="1">
+	    <label for="star1">1 star</label>
+	</fieldset>
+
+	<div class="allMovies"></div>
+	
+	<div id="modalDialog" class="modalDialog">
+		<div>			
+			<div class="text">
+				<h3>Thanks for Voting!</h3>
+				<a href="#close" class="close" title ="close">Return to Movies</a>
+			</div><!-- text -->
+		</div>
+	</div><!-- open modal -->
+
+
+	<a href="#top" class="top">Select Another Genre</a>
+</div>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<script src="js/jquery.smooth-scroll.min.js"></script>
+	<script src="js/scripts.js"></script>
+
+</body>
+</html>

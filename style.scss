@@ -1,0 +1,375 @@
+// Base Styles - Clearfix, Normalize, Border-Box__________
+
+.clearfix:after {
+   content: " ";
+   visibility: hidden;
+   display: block;
+   height: 0;
+   clear: both;
+}
+
+article,aside,details,figcaption,figure,footer,header,hgroup,nav,section,summary{display:block;}audio,canvas,video{display:inline-block;}audio:not([controls]){display:none;height:0;}[hidden]{display:none;}html{font-family:sans-serif;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;}a:focus{outline:thin dotted;}a:active,a:hover{outline:0;}h1{font-size:2em;}abbr[title]{border-bottom:1px dotted;}b,strong{font-weight:700;}dfn{font-style:italic;}mark{background:#ff0;color:#000;}code,kbd,pre,samp{font-family:monospace, serif;font-size:1em;}pre{white-space:pre-wrap;word-wrap:break-word;}q{quotes:\201C \201D \2018 \2019;}small{font-size:80%;}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline;}sup{top:-.5em;}sub{bottom:-.25em;}img{border:0;}svg:not(:root){overflow:hidden;}fieldset{border:1px solid silver;margin:0 2px;padding:.35em .625em .75em;}button,input,select,textarea{font-family:inherit;font-size:100%;margin:0;}button,input{line-height:normal;}button,html input[type=button],/* 1 */
+input[type=reset],input[type=submit]{-webkit-appearance:button;cursor:pointer;}button[disabled],input[disabled]{cursor:default;}input[type=checkbox],input[type=radio]{box-sizing:border-box;padding:0;}input[type=search]{-webkit-appearance:textfield;-moz-box-sizing:content-box;-webkit-box-sizing:content-box;box-sizing:content-box;}input[type=search]::-webkit-search-cancel-button,input[type=search]::-webkit-search-decoration{-webkit-appearance:none;}textarea{overflow:auto;vertical-align:top;}table{border-collapse:collapse;border-spacing:0;}body,figure{margin:0;}legend,button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0;}
+
+* { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
+
+$darkblue : #34495e;
+$red : #c0392b;
+
+$gold : goldenRod;
+
+img{
+	max-width: 100%;
+	max-height: 100%;
+}
+
+.wrapper{
+	max-width: 1000px;
+	margin: 0 auto;
+	padding: 0 20px;
+}
+
+html{
+	font-size: 62.5%;
+}
+
+body{
+	font-family: 'Montserrat', sans-serif;
+	font-size: 1rem;
+	background: url(images/p6.png);
+}
+
+h1{
+	font-size: 10rem;
+	line-height: 10rem;
+	padding: 10px 20px;
+	font-weight: 400;
+	text-transform: uppercase;
+	letter-spacing: -0.5rem;
+	margin: 0px auto;
+	text-align: center;
+	border : 2px solid #FFF;
+	width: 400px;
+	color: #FFF;
+	position: relative;
+	top: 100px;
+	background: rgba(255,255,255,0.1);
+}
+
+h2{
+	font-size: 4rem;
+	font-weight: 700;
+	margin-bottom: 10px;
+	color: $darkblue;
+	line-height: 1;
+}
+
+h3{
+	font-size: 2rem;
+	font-weight: lighter;
+	border-bottom: 1px solid $darkblue;
+	padding-bottom: 5px;
+	color: $red;
+}
+
+form{
+	font-size: 2rem;
+	position: relative;
+
+	select{
+		background: #FFF;
+		color: $darkblue;
+		margin: 0 auto;
+		position: relative;
+		top: 100px;
+		display: block;
+		border: 0;
+		padding: 10px;
+		-webkit-appearance: none;
+		-moz-appearance: none;
+		appearance: none;   
+		width: 400px;
+		outline: 0;
+		border: 1px solid #FFF;
+		border-radius: 0;
+	}
+
+		:hover{
+			color: $red;
+		}
+}
+
+.movie{
+	width: 32%;
+	height: 575px;
+	display: inline-block;
+	vertical-align: top;
+	margin: 0 16px 50px 0;
+	background: #FFF;
+	padding: 10px;
+	box-shadow: 0 0 1px rgba(0,0,0,0.2);
+	position: relative;
+	
+	img{
+		box-shadow: 1px 1px 5px rgba(255,255,255,0.3);
+		width: 100%;
+		height: 390px;
+	}
+}
+
+.movie:nth-child(3n+3){
+		margin-right:0;
+	}
+
+.banner{
+	max-width: 100%;
+	height: 500px;
+	background: url(images/camera-man.jpg) no-repeat;
+	background-size: 100%;
+	border-bottom: 20px solid $darkblue;
+}
+
+//Start rating styles start
+
+fieldset {
+   border: 0;
+   padding-left: 0;
+   font-size: 12px;
+   text-transform: uppercase; 
+   position: absolute;
+   bottom: 0px;
+}
+
+.rateMovie{
+	float: left;
+	margin-top: 20px;
+}
+
+.rateMovie:not(:checked) label{
+	font-size: 0;
+	cursor: pointer;
+	float: right;
+}
+//float right makes the starts align backwards	
+
+//test to see if the browser supports these advanced selectors
+.rateMovie:not(:checked) input[type = "radio"]{
+	display: none;
+}
+
+.rateMovie:not(:checked) label:before{
+	content: "\2605";
+	font-size: 30px;
+	color: $darkblue;
+}
+
+.rateMovie:not(:checked) label:hover:before{
+	color: $gold;
+}
+
+//use tilda to select all labels that come after the one we checked
+.rateMovie:not(:checked) input:checked ~ label:before{
+	color: $gold;
+}
+
+.rateMovie:not(:checked) label:hover ~ label:before{
+	color: $gold;
+}
+
+.rateMovie{
+	display: none;
+}
+
+.movie .rateMovie{
+	display: block;
+}
+
+
+// Modal Box Styles Starts
+
+.modalDialog{
+	position: fixed;
+	top:0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background: rgba(0,0,0,0.8);
+	z-index: -1;
+	opacity: 0;
+	-webkit-transition: opacity 400ms ease-in;
+	-moz-transition: opacity 400ms ease-in;
+	transition: opacity 400ms ease-in;
+	max-height: 100%;
+	overflow-y: scroll;
+}
+
+.modalDialog.visible {
+	opacity: 1;
+	z-index: 10;
+}
+
+.modalDialog > div{
+	max-width: 30%;
+	position: relative;
+	margin: 10% auto;
+	background: #FFF;	
+}
+
+.text{
+	padding: 20px 40px 37px 40px;
+	text-align: center;
+
+	h2{
+		margin: 0 0 10px 0;
+	}
+
+	a{
+		font-size: 13px;
+		margin-right: 10px;
+		text-decoration: none;
+		color:#34495e;
+		
+		&:hover{
+			color: $red;
+		}
+	}
+}
+
+//rate again box that appears on scroll
+
+a.top{
+	font-size: 1.5em;
+	text-transform: uppercase;
+	width: 50px;
+	position: fixed;
+	top: 10px;
+	right: 10px;
+	text-decoration: none;
+	color: $darkblue;
+	display: none;
+	background: rgba(255,255,255,0.8);
+	box-shadow: 0 0 2px rgba(0,0,0,0.5);
+	padding: 10px;
+	width: 100px;
+
+	&:before{
+		content: "\21E7";
+		font-size: 20px;
+		display: block;
+	}
+
+	&:hover{
+		color: $red;
+	}
+}
+
+//Media Queries
+
+/* Portrait tablet and small desktops */
+@media (max-width: 900px) {
+	.movie{
+		height: 530px;
+		margin: 0 1.5% 50px 0;
+		
+		img{
+			height: 350px;
+		}
+	}
+}
+
+/* Landscape phone to portrait tablet */
+@media (max-width: 768px) {
+	.banner{
+		height: 400px;
+	}	
+
+	h1{
+		font-size: 8rem;
+		line-height: 8rem;
+		position: relative;
+		top: 100px;
+	}
+
+	.movie{
+		width: 48%;
+	}
+}
+
+@media (max-width: 572px) {
+
+	.wrapper{
+		padding: 0 80px;
+	}
+	.banner{
+		height: 300px;
+	}
+
+	h1{
+		font-size: 7rem;
+		line-height: 7rem;
+		position: relative;
+		top: 35px;
+	}
+
+	.movie{
+		height: 795px;
+		margin: 0 0 30px 0;
+		width: 100%;
+
+		
+		img{
+			height: 615px;
+		}
+	}
+
+	form{
+		select{
+			position: relative;
+			top: 35px;
+			width: 400px;
+		}
+	}
+}
+
+/* Landscape phones and down */
+@media (max-width: 480px) {
+	.wrapper{
+		padding: 0 50px;
+	}
+
+	.banner{
+		height: 260px;
+	}
+
+	h1{
+		font-size: 6rem;
+		line-height: 6rem;
+		position: relative;
+		top: 20px;
+		width: 275px;
+		letter-spacing: 0;
+	}
+
+	h2{
+		font-size: 3rem;
+	}
+
+	.movie{
+		height: 588px;
+		margin: 0 0 30px 0;
+		width: 100%;
+
+		img{
+			height: 405px;
+		}
+	}
+
+	form{
+		select{
+			position: relative;
+			top: 20px;
+			width: 275px;
+		}
+	}
+
+}
