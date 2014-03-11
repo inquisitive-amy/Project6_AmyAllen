@@ -275,6 +275,10 @@ a.top{
 			height: 350px;
 		}
 	}
+
+	.modalDialog > div{
+		max-width: 60%;
+	}
 }
 
 /* Landscape phone to portrait tablet */
@@ -370,6 +374,10 @@ a.top{
 			top: 20px;
 			width: 275px;
 		}
+	}
+
+	.modalDialog > div{
+		max-width: 80%;
 	}
 
 }

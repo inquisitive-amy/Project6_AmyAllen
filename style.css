@@ -402,6 +402,10 @@ a.top:hover {
   .movie img {
     height: 350px;
   }
+
+  .modalDialog > div {
+    max-width: 60%;
+  }
 }
 /* Landscape phone to portrait tablet */
 @media (max-width: 768px) {
@@ -487,5 +491,9 @@ a.top:hover {
     position: relative;
     top: 20px;
     width: 275px;
+  }
+
+  .modalDialog > div {
+    max-width: 80%;
   }
 }
